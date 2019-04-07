@@ -25,21 +25,21 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req,res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Damian Win'
+        name: 'Eric Gwynne'
     })
 })
 
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'About Us',
-        name: 'Damian Win'
+        name: 'Eric Gwynne'
     })
 })
 
 app.get('/help', (req,res) => {
     res.render('help', {
         title: 'Help',
-        name: 'Damian Gwynne',
+        name: 'Eric Gwynne',
         message: 'If you have question, send us a mail to djbizquitz@gmail.com'
     })
 })
@@ -55,31 +55,29 @@ app.get('/weather', (req, res) => {
         if (error) {
             res.send({error})
         } else {
-            // console.log(location + "HEYY")
             forecast(latitude, longitude, (c, d) => {
                 if (c) {
                     res.send({c})
                 } else {
                     console.log(d)
                     res.send({
-                        location,
-                        forecast: d
+                        // location
+                        // ,
+                        // forecast: d
                     })
                 }
             })
         }
     });
 
-    // res.send({
-    //     adress: req.query.adress
-    // })
+
 
 })
 
 app.get('/404', (req,res) => {
     res.render('404',{
         title: 'Error',
-        name: 'Damian Win',
+        name: 'Eric Gwynne',
         message: 'Something went wrong. No page found'
     })
 })
@@ -99,7 +97,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404',{
         title: 'Error',
-        name: 'Damian Win',
+        name: 'Eric Gwynne',
         message: 'Help Article not found'        
     })
 })
@@ -107,7 +105,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req,res) => {
     res.render('404',{
         title: 'Error',
-        name: 'Damian Win',
+        name: 'Eric Gwynne',
         message: 'Page not found'
     })
 })
