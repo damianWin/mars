@@ -14,7 +14,7 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined, "The given location (or time) is invalid.")
         } else {
             // const data = body.body;
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out there (apparent temperature ${body.currently.apparentTemperature}) wit a ${body.currently.humidity * 100}% humidity`);
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out there (apparent temperature ${body.currently.apparentTemperature}) with a ${body.currently.humidity * 100}% humidity`);
             console.log(body.currently.temperature)
         }
         
